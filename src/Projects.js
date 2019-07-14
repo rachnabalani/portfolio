@@ -2,17 +2,18 @@ import React , { Component } from 'react';
 import PROJECTS from './data/projects';
 
 
+
 class Project extends Component {
     render() {
 
         const {title, image, description, link} = this.props.project;
 
         return (
-            <div>
-           <h3> {this.props.project.title} </h3>
-           <img src={image} alt = 'profile' />
+            <div style= {{display: 'inline-block', width: '400' , margin: '20'}}>
+           <h4> {this.props.project.title} </h4>
+           <img src={image} alt = 'profile' style={{width : 200, height : 120}} />
            <p>{description}</p>
-           <a href={link}>{link}</a>
+           <a href={link}> Github </a>
             </div>
         )
     }

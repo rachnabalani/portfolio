@@ -7,21 +7,21 @@ const PROJECTS= [
         id:1,
         title: 'Example React Application',
         description: 'sample description',
-        link: 'https://github.com/rachnbalani/portfolio.git',
+        link: 'https://github.com/rachnbalani/portfolio',
         image: project1
     },
     {
         id:2,
         title: 'Example React Application 2',
         description: 'sample description',
-        link: 'https://github.com/rachnbalani/portfolio.git',
+        link: 'https://github.com/rachnbalani/portfolio',
         image: project2
     },
     {
         id:3,
         title: 'Example React Application 3',
         description: 'sample description',
-        link: 'https://github.com/rachnbalani/portfolio.git',
+        link: 'https://github.com/rachnbalani/portfolio',
         image: project3
     }
 ];
