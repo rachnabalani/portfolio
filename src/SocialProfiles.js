@@ -6,11 +6,11 @@ import SOCIAL_PROFILES from './data/socialProfiles';
 class SocialProfile extends Component {
     render() {
 
-        const {title, link, image} = this.props.socialProfile;
+        const { link, image} = this.props.socialProfile;
 
         return (
-            <div>
-           <a href={link}> <img src={image} alt = {title} /> </a>
+            <div style= {{display: 'inline-block', width: 25 , margin: 10}} >
+           <a href={link}> <img src={image} alt = 'social-profile' style= {{width: 35 , margin: 15}}/> </a>
             </div>
         )
     }
@@ -23,7 +23,7 @@ class SocialProfiles extends Component {
     render() {
         return (
             <div>
-            <h2>Connect with me!</h2>
+            <h3>Connect with me!</h3>
             <div>
                {
                    SOCIAL_PROFILES.map( SOCIAL_PROFILE => {

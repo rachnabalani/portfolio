@@ -6,10 +6,10 @@ import PROJECTS from './data/projects';
 class Project extends Component {
     render() {
 
-        const {title, image, description, link} = this.props.project;
+        const {image, description, link} = this.props.project;
 
         return (
-            <div style= {{display: 'inline-block', width: '400' , margin: '20'}}>
+            <div style= {{display: 'inline-block', width: 200 , margin: 20}}>
            <h4> {this.props.project.title} </h4>
            <img src={image} alt = 'profile' style={{width : 200, height : 120}} />
            <p>{description}</p>

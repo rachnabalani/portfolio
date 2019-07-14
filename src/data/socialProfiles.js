@@ -20,7 +20,7 @@ const SOCIAL_PROFILES= [
     {
         id:3,
         title: 'github',
-        link: 'https://github.com/rachnbalani/',
+        link: 'https://github.com/rachnabalani',
         image: githubIcon
     },
      {
