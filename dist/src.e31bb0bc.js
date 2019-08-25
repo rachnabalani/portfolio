@@ -36375,6 +36375,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var App =
 /*#__PURE__*/
 function (_Component) {
@@ -36386,25 +36388,29 @@ function (_Component) {
     _classCallCheck(this, App);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this));
+
+    _defineProperty(_assertThisInitialized(_this), "toggleDisplayBio", function () {
+      _this.setState({
+        displayBio: !_this.state.displayBio
+      });
+    });
+
     _this.state = {
       displayBio: false
-    };
-    _this.toggleDisplayBio = _this.toggleDisplayBio.bind(_assertThisInitialized(_this)); //we did this so that the toggleDisplayBio method below can access 'this' which will then have acecss to 'setState' from Component class.
+    }; //this.toggleDisplayBio = this.toggleDisplayBio.bind(this); 
+    //we did this so that the toggleDisplayBio method below can access 'this' which will then have acecss to 'setState' from Component class.
     // The toggleDisplayBio method on it's own doesn't have any meaning to 'this' keyword and it will throw an error "setState is undefined, this is undefined" 
     // so basically we are saying that take this toggleDisplayBio function of declared here (that is being said on the left side of the equal sign),
     // and then bind the "this" value to it. 
+    //or, just convert the toggleDisplayBio function into a callback function. 
+    //for that, comment the above line, and toggleDisplayBio() {this.setState... } now becomes
+    // toggleDisplayBio = () => { this.setState... } 
+    //the above callback works, because callbacks inherently contain reference to "this" keyword. 
 
     return _this;
   }
 
   _createClass(App, [{
-    key: "toggleDisplayBio",
-    value: function toggleDisplayBio() {
-      this.setState({
-        displayBio: !this.state.displayBio
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
       return _react.default.createElement("div", null, _react.default.createElement("img", {
@@ -36415,7 +36421,7 @@ function (_Component) {
         onClick: this.toggleDisplayBio
       }, " Show Less ")) : _react.default.createElement("div", null, _react.default.createElement("button", {
         onClick: this.toggleDisplayBio
-      }, " Read more ")), _react.default.createElement("hr", null), _react.default.createElement(_Projects.default, null), _react.default.createElement("hr", null), _react.default.createElement(_SocialProfiles.default, null), _react.default.createElement(Jokes, null));
+      }, " Read more ")), _react.default.createElement("hr", null), _react.default.createElement(_Projects.default, null), _react.default.createElement("hr", null), _react.default.createElement(_SocialProfiles.default, null));
     }
   }]);
 
@@ -36509,7 +36515,41 @@ function (_Component) {
 
 var _default = Jokes;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js"}],"components/Header.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Header = function Header(_ref) {
+  var children = _ref.children;
+  var style = {
+    display: 'inline-block',
+    margin: 10,
+    marginBottom: 30
+  };
+  return _react.default.createElement("div", null, _react.default.createElement("div", null, _react.default.createElement("h3", {
+    style: style
+  }, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, "Home")), _react.default.createElement("h3", {
+    style: style
+  }, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/jokes"
+  }, "Jokes"))), children);
+};
+
+var _default = Header;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -36596,6 +36636,8 @@ var _App = _interopRequireDefault(require("./components/App"));
 
 var _Jokes = _interopRequireDefault(require("./components/Jokes"));
 
+var _Header = _interopRequireDefault(require("./components/Header"));
+
 require("./index.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -36607,12 +36649,16 @@ _reactDom.default.render(_react.default.createElement(_reactRouterDom.Router, {
 }, _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
   exact: true,
   path: "/",
-  component: _App.default
+  render: function render() {
+    return _react.default.createElement(_Header.default, null, _react.default.createElement(_App.default, null));
+  }
 }), _react.default.createElement(_reactRouterDom.Route, {
   path: "/jokes",
-  component: _Jokes.default
+  render: function render() {
+    return _react.default.createElement(_Header.default, null, _react.default.createElement(_Jokes.default, null));
+  }
 }))), document.getElementById('root'));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","history/createBrowserHistory":"../node_modules/history/createBrowserHistory.js","./components/App":"components/App.js","./components/Jokes":"components/Jokes.js","./index.css":"index.css"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","history/createBrowserHistory":"../node_modules/history/createBrowserHistory.js","./components/App":"components/App.js","./components/Jokes":"components/Jokes.js","./components/Header":"components/Header.js","./index.css":"index.css"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

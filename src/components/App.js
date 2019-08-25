@@ -8,14 +8,19 @@ class App extends Component {
    constructor() {
        super();
        this.state = { displayBio: false};
-       this.toggleDisplayBio = this.toggleDisplayBio.bind(this); 
+       //this.toggleDisplayBio = this.toggleDisplayBio.bind(this); 
        //we did this so that the toggleDisplayBio method below can access 'this' which will then have acecss to 'setState' from Component class.
        // The toggleDisplayBio method on it's own doesn't have any meaning to 'this' keyword and it will throw an error "setState is undefined, this is undefined" 
        // so basically we are saying that take this toggleDisplayBio function of declared here (that is being said on the left side of the equal sign),
        // and then bind the "this" value to it. 
+       //or, just convert the toggleDisplayBio function into a callback function. 
+       //for that, comment the above line, and toggleDisplayBio() {this.setState... } now becomes
+       // toggleDisplayBio = () => { this.setState... } 
+       //the above callback works, because callbacks inherently contain reference to "this" keyword. 
+       
    }
 
-   toggleDisplayBio() 
+   toggleDisplayBio = () =>  
    {
        this.setState({ displayBio: !this.state.displayBio});
    }
@@ -49,7 +54,6 @@ class App extends Component {
             <Projects />
             <hr />
             <SocialProfiles />
-            <Jokes />
 
         </div>
         )
