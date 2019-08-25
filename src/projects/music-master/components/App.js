@@ -14,7 +14,7 @@ class App extends Component {
     };
 
    componentDidMount() {
-       this.searchArtist('Bruno Mars');
+       this.searchArtist('Khalid');
    }
 
     searchArtist = artistQuery => {
