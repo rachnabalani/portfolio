@@ -1,4 +1,6 @@
 import React , { Component } from 'react';
+import spotifyIcon from '../assets/Spotify-Icon.png';
+
 
 class Search extends Component {
 
@@ -27,7 +29,7 @@ class Search extends Component {
             onKeyPress={this.handleKeyPress}
             placeholder='Search artist here' 
             />
-           <button onClick={this.searchArtist}>Search</button>
+           <button onClick={this.searchArtist}><img src={spotifyIcon} style= {{ width: 23 , margin: 3}}/>Search</button>
        
             </div>
         )

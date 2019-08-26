@@ -8,9 +8,6 @@ if(!artist) return null;
 
     return (
         <div>
-        <h3> {name} </h3>
-        <p> {followers.total} followers </p>
-        <p> {genres.join(', ')} </p>
         <img 
         src={images[0] && images[0].url} 
         alt='artist-profile'
@@ -18,9 +15,13 @@ if(!artist) return null;
             width: 200,
             height: 200,
             borderRadius: 100,
-            objectFit: 'cover'
+            objectFit: 'cover',
+            margin: 30
             }} 
         />
+        <h3> {name} </h3>
+        <p> {followers.total} followers </p>
+        <p> <strong>Genre: </strong> {genres.join(', ')}</p> 
         </div>
     )
 

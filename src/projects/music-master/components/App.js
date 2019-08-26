@@ -2,6 +2,7 @@ import React , { Component } from 'react';
 import Artist from './Artist';
 import Tracks from './Tracks';
 import Search from './Search';
+import swal from '@sweetalert/with-react';
 
 const API_ADDRESS = 'https://spotify-api-wrapper.appspot.com';
 
@@ -37,7 +38,10 @@ class App extends Component {
 
             }
             else{
-                console.log('artist not found');
+                    swal({
+                        content: <div>Artist not found! Please check the name and try again.</div>,
+                        buttons: true,
+                        });
             }
         })
         .catch(error => alert(error.message));
@@ -47,8 +51,8 @@ class App extends Component {
     render () {
         console.log('this.state', this.state);
         return (
-        <div> 
-           <h2> Music Master </h2>
+        <div class='music-master'> 
+           <h2> Artist Top Tracks </h2>
            <Search searchArtist= {this.searchArtist}/>
            <Artist artist={this.state.artist} />
         <Tracks tracks={this.state.tracks}/>
