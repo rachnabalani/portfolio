@@ -7,6 +7,7 @@ const PROJECTS= [
         id:1,
         title: 'Example React Application',
         description: 'sample description',
+        tech: 'N/A',
         weblink: 'https://github.com/rachnbalani/portfolio',
         image: project1,
         github: 'https://github.com/rachnbalani/portfolio'
@@ -15,6 +16,7 @@ const PROJECTS= [
         id:2,
         title: 'Example React Application 2',
         description: 'sample description',
+        tech: 'N/A',
         weblink: 'https://github.com/rachnbalani/portfolio',
         image: project2,
         github: 'https://github.com/rachnbalani/portfolio'
@@ -22,8 +24,9 @@ const PROJECTS= [
     {
         id:3,
         title: 'Artist Top Tracks',
-        description: 'A fun app to see top 10 tracks by any artist. Used Spotify API, React.JS, Parcel',
-        weblink: '/music-master',
+        description: 'A fun app to see top 10 tracks by any artist.',
+        tech: 'React.JS and Spotify API',
+        weblink: '/top-tracks-project',
         image: project3,
         github: 'https://github.com/rachnabalani/music-master'
     }

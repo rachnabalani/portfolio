@@ -15,7 +15,10 @@ ReactDOM.render(
         <Switch>
             <Route exact path='/' render={() => <Header><App /></Header> } />
             <Route path='/jokes' render={() => <Header><Jokes /></Header> }/>
-             <Route path='/music-master' render={() => <Header><MusicMaster /></Header> }/>
+             <Route path='/top-tracks-project' render={() => <Header><MusicMaster /></Header> }/>
+              {/* <Route path='/about' render={() => <Header><Jokes /></Header> }/>
+               <Route path='/projects' render={() => <Header><Jokes /></Header> }/>
+                <Route path='/contact' render={() => <Header><Jokes /></Header> }/> */}
         </Switch>
     </Router>,
     document.getElementById('root')

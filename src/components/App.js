@@ -27,7 +27,7 @@ class App extends Component {
    
     render () {
         return (
-        <div> 
+        <div class='portfolio'> 
             <img src={ProfilePic} alt='profile-photo' className="profilePic"/>
             <h1> Hello! </h1>
             <p> My name is Rachna. </p>
@@ -50,9 +50,8 @@ class App extends Component {
             </div>
             )
             }
-            <hr />
+        
             <Projects />
-            <hr />
             <SocialProfiles />
 
         </div>
