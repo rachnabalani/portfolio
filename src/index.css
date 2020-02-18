@@ -10,7 +10,6 @@
 }
 
 body {
-    text-align: center;
     font-size: 20px;
     padding: 2.5%;
     font-family: 'RobotoCondensed';
@@ -50,5 +49,10 @@ h1, h2, h3, h4, h5 {
 }
 
 .portfolio {
+    text-align: center;
     background: linear-gradient(#ffecd2, #ffc3a0, #ffafbd);
+}
+
+.navMenu {
+    text-align: right;
 }

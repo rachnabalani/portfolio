@@ -51,7 +51,7 @@ class App extends Component {
             )
             }
         
-            <Projects />
+            {/* <Projects /> */}
             <SocialProfiles />
 
         </div>
